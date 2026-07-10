@@ -32,6 +32,7 @@ body {
   border-radius: 24px;
   padding: 20px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  overflow-y: visible !important;
 }
 
 .main-title {
@@ -444,8 +445,12 @@ background-color: #0b182d;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
   color: #334155;
+}
+
+.cursor-pointer
+{
+  cursor: pointer;
 }
 
 .favorited-red-btn {
@@ -455,7 +460,6 @@ background-color: #0b182d;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
   color: white;
 }
 
@@ -513,9 +517,10 @@ background-color: #0b182d;
     flex-direction: column;
     gap: 24px;
   }
+
   .main-container {
-    padding: 20px;
-    /* max-height: none; */
+    max-height: 85vh !important;
+    overflow-y: auto !important;
   }
 
   .profile-card-bottom {
@@ -535,6 +540,15 @@ background-color: #0b182d;
     justify-content: center;
     gap: 10px;
   }
+
+  
+ 
+  .movies-vertical-listing,
+  .favorites-movie-listing {
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+  
 }
 
 
@@ -568,3 +582,29 @@ background-color: #0b182d;
   border-color: #475569;
   color: #cbd5e1;
 }
+
+
+
+.movies-vertical-listing {
+  max-height: 40vh; 
+  overflow-y: auto;
+}
+
+.favorites-movie-listing {
+  max-height: 150px; 
+  overflow-y: auto;
+}
+
+
+.movies-vertical-listing::-webkit-scrollbar,
+.favorites-movie-listing::-webkit-scrollbar,
+.main-container::-webkit-scrollbar {
+  display: none; 
+}
+
+.movies-vertical-listing,
+.favorites-movie-listing,
+.main-container {
+  scrollbar-width: none;  
+}
+

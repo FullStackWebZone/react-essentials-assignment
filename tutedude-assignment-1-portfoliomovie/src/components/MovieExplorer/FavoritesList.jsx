@@ -3,7 +3,7 @@ import { Heart } from 'lucide-react';
 
 function FavoritesList(props) {
   return (
-    <div className="favorites-movie-listing" style={{ gap: '8px', flexWrap: 'wrap' }}>
+    <div className="favorites-movie-listing" style={{display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
       {props.favoriteList.length === 0 ? (
         <p className="empty-favs-alert-text">No favorites</p>
       ) : (
@@ -12,10 +12,10 @@ function FavoritesList(props) {
             <div 
               key={f.id} 
               className="favorite-movie-btn" 
-              style={{ alignItems: 'center', gap: '6px', cursor: 'pointer' }}
-              onClick={() => props.toggleFavorite(f)}
+              style={{display: 'flex', alignItems: 'center', gap: '6px' }}
+              
             >
-              <Heart size={12} fill="#ef4444" color="#ef4444" />
+              <Heart size={12} onClick={() => props.toggleFavorite(f)} fill="#ef4444" color="#ef4444" className="cursor-pointer" />
               {f.title} ({f.year})
             </div>
           );
