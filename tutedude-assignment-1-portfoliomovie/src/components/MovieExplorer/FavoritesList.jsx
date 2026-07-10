@@ -9,7 +9,12 @@ function FavoritesList(props) {
       ) : (
         props.favoriteList.map(function(f) {
           return (
-            <div key={f.id} className="favorite-movie-btn" style={{ alignItems: 'center', gap: '6px' }}>
+            <div 
+              key={f.id} 
+              className="favorite-movie-btn" 
+              style={{ alignItems: 'center', gap: '6px', cursor: 'pointer' }}
+              onClick={() => props.toggleFavorite(f)}
+            >
               <Heart size={12} fill="#ef4444" color="#ef4444" />
               {f.title} ({f.year})
             </div>

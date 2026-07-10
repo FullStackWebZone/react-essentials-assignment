@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../ui/Button.jsx';
 
-function FooterActions(props) {
+function SearchResults(props) {
   return (
     <div className="middle-status-bar">
       <div className="results-counter">
@@ -16,4 +16,4 @@ function FooterActions(props) {
   );
 }
 
-export default FooterActions;
+export default SearchResults;
