@@ -72,6 +72,7 @@ function App() {
 
   function handleSearchReset() {
     setSearchText("");
+    setFavoriteItems([]);
   }
 
   function handleToggleFavorite(movie) {

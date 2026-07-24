@@ -21,11 +21,11 @@ function MovieCard(props) {
 
       <div className="movie-right-action-block">
         <button 
-          
-          className={props.isFavorite ? "favorited-red-btn" : "unfavorited-white-btn"}
+          onClick={() => props.toggleFavorite(movie)}
+          className={props.isFavorite ? "favorited-red-btn cursor-pointer" : "unfavorited-white-btn cursor-pointer"}
           style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
         >
-          <Heart size={14} onClick={() => props.toggleFavorite(movie)} className="cursor-pointer"  fill={props.isFavorite ? "white" : "none"} color={props.isFavorite ? "white" : "#64748b"} />
+          <Heart size={14}  fill={props.isFavorite ? "white" : "none"} color={props.isFavorite ? "white" : "#64748b"} />
           {props.isFavorite ? "Favorited" : "Favorite"}
         </button>
       </div>
